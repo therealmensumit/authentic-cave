@@ -373,4 +373,100 @@ p{
         text-align: center;
         margin: 0;
     }
+    .navbar-toggler:focus {
+        border: 2px solid #fff !important;
+    }
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .banner {
+        height: 650px;
+    }
+    .head2 {
+        font-size: 45px;
+        line-height: 50px;
+    }
+    .our-mission h2 {
+        font-size: 30px;
+    }
+    .our-mission p {
+        font-size: 19px;
+        line-height: 27px;
+    }
+    .project-head {
+        font-size: 30px;
+    }
+    .project-head span {
+        font-size: 45px;
+    }
+    .service-content {
+        width: 80%;
+        left: 10%;
+    }
+    .design-wrapper {
+        padding: 100px 10px 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    .banner {
+        height: 500px;
+    }
+    .head2 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .banner-content {
+        padding-top: 15rem;
+    }
+    .our-mission h2 {
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .our-mission p {
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .project-head {
+        font-size: 25px;
+        line-height: 20px;
+    }
+    .project-head span {
+        font-size: 30px;
+        display: unset;
+    }
+    .service-content {
+        position: unset;
+        width: 100%;
+        padding: 2rem 0;
+    }
+    .service-content h4 {
+        font-size: 18px;
+    }
+    .service-content p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .design-wrapper {
+        padding: 50px 15px 30px;
+    }
+    .foot-link {
+        font-size: 16px;
+    }
+    .stay-tuned {
+        background-color: #E63B60;
+    }
+    .stay-image {
+        position: unset;
+        width: 200px;
+    }
+    .text-center-sm {
+        text-align: center;
+    }
+    .stay-tuned .subscribe {
+        font-size: 16px;
+    }
+    .footer p {
+        font-size: 12px;
+    }
+} 
