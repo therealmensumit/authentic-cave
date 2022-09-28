@@ -559,8 +559,8 @@ input.email::placeholder{
     .banner-content {
         padding-top: 15rem;
     }
-    .banner-text{
-        bottom: 30%;
+    .banner h5{
+        width: auto;
     }
     .our-mission h2 {
         font-size: 20px;
