@@ -29,6 +29,20 @@ p{
 .header{
     width: 100%;
     position: absolute;
+    z-index: 999;
+    transition: all .4s;
+}
+.fixed{
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(3px);
+    background: #00000080;    
+}
+.navbar-brand img{
+    width: 110px;
+}
+.fixed .navbar-brand img{
+    width: 80px;
 }
 .navbar-expand-lg .navbar-collapse{
     justify-content: center;
@@ -42,6 +56,9 @@ p{
 .nav-link:last-child{
     margin-right: 0;
     color: #17BCB0;
+}
+.nav-link:last-child:hover{
+    color: #fff;
 }
 .nav-link span{
     margin-left: 15px;
@@ -69,24 +86,50 @@ p{
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-    height: 780px;
+    height: calc(100vh - 3px);
 }
 .banner-content{
-    padding-top: 20rem;
+    padding-top: 13rem;
 }
 .head2{
     font-size: 80px;
     line-height: 83px;
     color: #ffffff;
 }
-.banner-content h4{
+.banner button{
     color: #17BCB0;
     font-size: 18px;
     line-height: 17px;
+    border: 0;
+    background: transparent;
 }
-.banner-content h4 img{
+.banner button img{
     margin-left: 30px;
     width: 38px;
+}
+.banner-text{
+    position: absolute;
+    width: 40%;
+    right: 10%;
+    bottom: 40%;
+    transform: translateY(50%);
+}
+.banner h5{
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    width: 10%;
+    text-align: center;
+}
+.banner h5 a{
+    color: #fff;
+    font-size: 18px;
+    line-height: 17.5px;    
+}
+.banner h5 img{
+    width: 38px;
+    display: block;
+    margin: auto;
 }
 /***********************/
 /***********************/
@@ -149,10 +192,15 @@ p{
 }
 .project-list-content h4{
     color: #fff;
+}
+.project-list-content button{
+    color: #fff;
     font-size: 16px;
     line-height: 15px;
+    border: 0;
+    background: transparent;
 }
-.project-list-content h4 img{
+.project-list-content button img{
     width: 38px;
     margin-right: 12px;
 }
@@ -196,8 +244,33 @@ p{
     color: #fff;
 }
 .design-wrapper {
-	padding: 166px 60px 30px;
+    padding: 225px 60px 30px;
 	transition: .4s;
+    position: relative;
+    min-height: 400px;
+}
+.design-wrapper::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    background-color: #0C1B2D;
+    width: 0;
+    height: 100%;
+    transition: .4s;
+    z-index: -1;
+}
+.design-wrapper.bg-aqua::before {
+    background: #17BCB0;
+}
+.design-wrapper.bg-pink::before {
+    background: #E63B60;
+}
+.design-wrapper.bg-blck::before {
+    background: #050416;
+}
+.design-wrapper:hover::before {
+    width: 100%;
 }
 .design-wrapper h6 {
 	font-size: 14px;
@@ -225,11 +298,11 @@ p{
 .btn-without-bg .hover-btn{
     position: absolute;
     top: 0;
-    left: 6px;
+    left: 0;
     opacity: 0;
 }
 .design-wrapper:hover {
-    background-color: #0C1B2D;
+    /* background-color: #0C1B2D; */
 	color: #fff;
 }
 .design-wrapper:hover .btn-without-bg .hover-btn{
@@ -287,8 +360,8 @@ p{
 .contact-logo{
     width: 150px;
 }
-.col-md-4.text-end,
-.col-md-3.text-end{
+.col-md-3.text-md-end,
+.col-md-4.text-md-end {
     border-right: 1px solid #fff;
 }
 .foot-link{
@@ -298,13 +371,26 @@ p{
 .col-md-3.text-end .foot-link{
     font-size: 22px;
 }
-.social-icons i{
+.foot-link:hover{
     color: #fff;
-    background-color: #041B61;
-    padding: 16px 19px;
+}
+.social-icons a{
+    background: #041B61;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin: auto;
+    margin-bottom: 15px;
+    padding: 12px;
     border-radius: 50%;
-    line-height: 75px;
-    font-size: 21px;
+    transition: all .2s;
+}
+/*.social-icons a:hover {
+    background: #17bcb0;
+}*/
+.social-icons a img{
+    width: 25px;
+    height: 25px;
 }
 /*********************/
 /*********************/
@@ -329,19 +415,36 @@ p{
 .stay-tuned .subscribe{
     font-size: 20px;
     line-height: 22px;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #fff;
 }
 .stay-tuned .subscribe strong{
     display: block;
 }
-.stay-tuned h6{
+.input-field{
+    margin-bottom: 10px;
+}
+input.email{
+    border: 0;
+    border-bottom: 1px solid #fff;
+    background-color: transparent;
+    width: 60%;
+    color: #fff;
+    text-align: right;
+}
+input.email:focus-visible{
+    outline: 0;
+}
+input.email::placeholder{
+    color: rgba(255, 255, 255, 0.514);
+}
+.stay-tuned button{
     font-size: 14px;
     line-height: 16px;
     color: #fff;
     letter-spacing: 1px;
+    background: transparent;
+    border: 0;
 }
-.stay-tuned h6 img{
+.stay-tuned button img{
     width: 26px;
     margin-left: 9px;
 }
@@ -356,32 +459,68 @@ p{
     }
 }
 @media (max-width: 991px) {
+    .banner-text {
+        width: 100%;
+        right: 50%;
+        bottom: 50%;
+        transform: translate(50%, 50%);
+        text-align: center;
+    }
+    .design-wrapper{
+        min-height: auto;
+    }
     div#navbarNavAltMarkup {
-        background: #000;
+        width: 100%;
+    }
+    div#navbarNavAltMarkup::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        opacity: .5;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+    }
+    .back-opac{
+        background: #000000f5;
         width: 100%;
         position: fixed;
         top: 0;
         left: 0;
         padding: 20px;
-        padding-top: 6rem;
+        padding-top: 5rem;
         height: 100vh;
-        z-index: 99;
+        transition: 0.1s;
+        clip-path: circle(122% at 82% -16%);
     }
     .nav-link {
         font-size: 18px;
-        line-height: 66px;
+        line-height: 35px;
         text-align: center;
         margin: 0;
     }
     .navbar-toggler:focus {
-        border: 2px solid #fff !important;
+        box-shadow: none;
+    }
+    .col-md-3.text-md-end,
+    .col-md-4.text-md-end {
+        border-right: 0;
+    }
+    .right-arrow::before{
+        display: none;
+    }
+    .stay-image {
+        top: -17px;
+        left: 80px;
+        width: 290px;
+    }
+    input.email{
+        width: 80%;
     }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-    .banner {
-        height: 650px;
-    }
     .head2 {
         font-size: 45px;
         line-height: 50px;
@@ -405,12 +544,13 @@ p{
     }
     .design-wrapper {
         padding: 100px 10px 10px;
+        min-height: auto;
     }
 }
 
 @media (max-width: 767px) {
     .banner {
-        height: 500px;
+        height: 100vh;
     }
     .head2 {
         font-size: 40px;
@@ -418,6 +558,9 @@ p{
     }
     .banner-content {
         padding-top: 15rem;
+    }
+    .banner-text{
+        bottom: 30%;
     }
     .our-mission h2 {
         font-size: 20px;
@@ -454,11 +597,12 @@ p{
         font-size: 16px;
     }
     .stay-tuned {
-        background-color: #E63B60;
+        background: linear-gradient(131deg, #17BCB0 50%, #E63B60 50%);
     }
     .stay-image {
         position: unset;
         width: 200px;
+        margin: auto;
     }
     .text-center-sm {
         text-align: center;
@@ -466,7 +610,15 @@ p{
     .stay-tuned .subscribe {
         font-size: 16px;
     }
+    input.email{
+        text-align: center;
+    }
     .footer p {
         font-size: 12px;
     }
 } 
+@media (max-width:320px){
+    .nav-link{
+        font-size: 16px;
+    }
+}
