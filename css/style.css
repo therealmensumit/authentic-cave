@@ -351,6 +351,44 @@ p{
 }
 /*********************/
 /*********************/
+/* why-choose styling */
+/*********************/
+/*********************/
+.why-choose{
+    background-image: url(../images/why-choose-us.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.why-choose-heading{
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 48px;
+    text-transform: uppercase;
+}
+.why-choose .works{
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #868686;
+    padding: 30px 20px;
+    transition: all .4s;
+}
+.why-choose .works:hover{
+    box-shadow: 0 10px 17px #b1b1b170;
+    margin-top: -4px;
+}
+.why-choose .works h4{
+    font-size: 20px;
+    line-height: 24px;
+    font-family: 'Poppins';
+    margin-bottom: 24px;
+}
+.why-choose .works p{
+    line-height: 22px;
+    font-size: 18px;
+}
+
+/*********************/
+/*********************/
 /* contact styling */
 /*********************/
 /*********************/
@@ -517,6 +555,9 @@ input.email::placeholder{
     }
     input.email{
         width: 80%;
+    }
+    .why-choose .works{
+        margin-bottom: 2rem;
     }
 }
 
